@@ -6,14 +6,11 @@ const SavedArticles = props => (
     <div className="savedarticles">
         <header className="savedarticles-header">
             <img src={logo} className="savedarticles-logo" alt="logo" />
-            <h1 className="savedarticles-title">Welcome to React SavedArticles</h1>
+            <h1 className="savedarticles-title">Saved Articles</h1>
         </header>
         <p className="savedarticles-intro">
-            To get started, SavedArticles.
+            Save your articles here...
         </p>
-        <h1 className="savedarticles-intro">
-            SavedArticles again.
-        </h1>
     </div>
 );
 

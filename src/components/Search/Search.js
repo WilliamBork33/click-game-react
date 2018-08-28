@@ -6,14 +6,11 @@ const Search = props => (
     <div className="search">
         <header className="search-header">
             <img src={logo} className="search-logo" alt="logo" />
-            <h1 className="search-title">Welcome to React Search</h1>
+            <h1 className="search-title">Search</h1>
         </header>
         <p className="search-intro">
-            To get started, Search.
+            Search articles here...
         </p>
-        <h1 className="search-intro">
-            Search again.
-        </h1>
     </div>
 );
 
