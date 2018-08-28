@@ -1,0 +1,54 @@
+[
+    {
+        "pkmn": "bulbasaur",
+        "image": "https://img.pokemondb.net/artwork/large/bulbasaur.jpg"
+    },
+    {
+        "pkmn": "charmander",
+        "image": "https://img.pokemondb.net/artwork/large/charmander.jpg"
+    },
+    {
+        "pkmn": "squirtle",
+        "image": "https://img.pokemondb.net/artwork/large/squirtle.jpg"
+    },
+    {
+        "pkmn": "butterfree",
+        "image": "https://img.pokemondb.net/artwork/large/butterfree.jpg"
+    },
+    {
+        "pkmn": "pikachu",
+        "image": "https://img.pokemondb.net/artwork/large/pikachu.jpg"
+    },
+    {
+        "pkmn": "jigglypuff",
+        "image": "https://img.pokemondb.net/artwork/large/jigglypuff.jpg"
+    },
+    {
+        "pkmn": "vaporeon",
+        "image": "https://img.pokemondb.net/artwork/large/vaporeon.jpg"
+    },
+    {
+        "pkmn": "jolteon",
+        "image": "https://img.pokemondb.net/artwork/large/jolteon.jpg"
+    },
+    {
+        "pkmn": "flareon",
+        "image": "https://img.pokemondb.net/artwork/large/flareon.jpg"
+    },
+    {
+        "pkmn": "snorlax",
+        "image": "https://img.pokemondb.net/artwork/large/snorlax.jpg"
+    },
+    {
+        "pkmn": "articuno",
+        "image": "https://img.pokemondb.net/artwork/large/articuno.jpg"
+    },
+    {
+        "pkmn": "zapdos",
+        "image": "https://img.pokemondb.net/artwork/large/zapdos.jpg"
+    },
+    {
+        "pkmn": "moltres",
+        "image": "https://img.pokemondb.net/artwork/large/moltres.jpg"
+    }
+]

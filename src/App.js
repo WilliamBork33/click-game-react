@@ -1,53 +1,107 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import pokemon from "./pokemon.json";
 
 
 import Wrapper from "./components/Wrapper/";
 
-import Search from "./components/Search/";
-import Results from "./components/Results/";
-import SavedArticles from "./components/SavedArticles";
+import Header from "./components/Header/";
+import Instructions from "./components/Instructions/";
+import PokemonCard from "./components/PokemonCard";
+import Navpills from './components/Navpills'
+import CardContainer from './components/CardContainer/CardContainer';
 
 
 class App extends Component {
 
 
-    /* 
-    state = {
 
+
+
+
+
+
+    state = {
         message: "Click an image to begin!",
         topScore: 0,
         curScore: 0,
-        
+        pokemon: pokemon,
+        unselectedPokemon: pokemon
     }
 
     componentDidMount() {
     }
 
- */
+    shuffleArray = array => {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    selectPokemon = pkmn => {
+        const findPokemon = this.state.unselectedPokemon.find(item => item.pkmn === pkmn);
+
+        if(findPokemon === undefined) {
+            // failure to select a new dog
+            this.setState({ 
+                message: "You guessed incorrectly!",
+                topScore: (this.state.curScore > this.state.topScore) ? this.state.curScore : this.state.topScore,
+                curScore: 0,
+                pokemon: pokemon,
+                unselectedPokemon: pokemon
+            });
+        }
+        else {
+            // success to select a new dog
+            const newPokemon = this.state.unselectedPokemon.filter(item => item.pkmn !== pkmn);
+            
+            this.setState({ 
+                message: "You guessed correctly!",
+                curScore: this.state.curScore + 1,
+                pokemon: pokemon,
+                unselectedPokemon: newPokemon
+            });
+        }
+
+        this.shuffleArray(pokemon);
+    };
+
+
+
+
+
 
   render() {
     return (
 
         <Wrapper>
 
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h1 className="App-title">Welcome to click-game-react</h1>
-            </header>
-            <h1 className="App-intro">
-                A news scraper built in React.
-            </h1>            
-        </div>
+        <Header />
 
-        <Search />
+        <Instructions />
+       
+        
+        <Navpills
+        message={this.state.message}
+        curScore={this.state.curScore}
+        topScore={this.state.topScore}
+        />
 
-        <Results />
+        <CardContainer />
 
-        <SavedArticles />
+        
+        {
+            this.state.pokemon.map(pokemon => (
+                <PokemonCard
+                    pkmn={pokemon.pkmn}
+                    image={pokemon.image}
+                    selectPokemon={this.selectPokemon} 
+                    curScore={this.state.curScore}
+                />
+            ))
+        }
 
         </Wrapper>
     );
