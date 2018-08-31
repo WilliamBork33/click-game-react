@@ -1,7 +1,9 @@
+//Importing React Components
 import React from "react";
 import logo from '../../logo.svg';
 import "./Header.css";
 
+//Header Div
 const Header = props => (
     <div className="header">
         <header className="header-header">
@@ -14,4 +16,5 @@ const Header = props => (
     </div>
 );
 
+//Export Component for Use in the Rest of Application.
 export default Header;

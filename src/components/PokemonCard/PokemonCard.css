@@ -22,6 +22,7 @@
     height: 140px;
 }
 
+/* Shake Feature of Images */
 .style_prevu_kit
 {
     display: inline-block;
@@ -53,11 +54,6 @@
     transition: all 200ms ease-in;
     transform: scale(1.3);
 }
-
-/* .style_prevu_kit:active {
-    animation: shake 0.5s;
-    animation-iteration-count: 1;
-} */
 
 .style_prevu_kit_ex {
     animation: shake 0.3s;

@@ -1,6 +1,8 @@
+//Importing React Components
 import React from "react";
 import "./Navigation.css";
 
+//Scoring Box Div
 const Navigation = props => (
     <div>
         <ul className="nav nav-pills nav-justified">
@@ -19,4 +21,5 @@ const Navigation = props => (
     </div>
 );
 
+//Export Component for Use in the Rest of Application.
 export default Navigation;

@@ -1,28 +1,16 @@
+//Importing React Components
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import pokemon from "./pokemon.json";
-
-
 import Wrapper from "./components/Wrapper/";
-
 import Header from "./components/Header/";
 import Instructions from "./components/Instructions/";
-import PokemonCard from "./components/PokemonCard";
 import Navigation from "./components/Navigation";
+import PokemonCard from "./components/PokemonCard";
+import pokemon from "./pokemon.json";
 import Footer from "./components/Footer/";
 
-
-
 class App extends Component {
-
-
-
-
-
-
-
-
+    //State of game score.
     state = {
         message: "Click an image to begin!",
         topScore: 0,
@@ -34,6 +22,7 @@ class App extends Component {
     componentDidMount() {
     }
 
+    //Function for moving images around the screen upon each click.
     shuffleArray = array => {
         for (let i = array.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
@@ -41,11 +30,12 @@ class App extends Component {
         }
     }
 
+    //Function for scoring in game.
     selectPokemon = pkmn => {
         const findPokemon = this.state.unselectedPokemon.find(item => item.pkmn === pkmn);
 
-        if(findPokemon === undefined) {
-            // failure to select a new dog
+        if (findPokemon === undefined) {
+            //For when double clicking a Pokemon.
             this.setState({ 
                 message: "Already clicked this Pokemon!",
                 topScore: (this.state.curScore > this.state.topScore) ? this.state.curScore : this.state.topScore,
@@ -55,7 +45,7 @@ class App extends Component {
             });
         }
         else {
-            // success to select a new dog
+            //For when not double clicking a Pokemon.
             const newPokemon = this.state.unselectedPokemon.filter(item => item.pkmn !== pkmn);
             
             this.setState({ 
@@ -69,46 +59,34 @@ class App extends Component {
         this.shuffleArray(pokemon);
     };
 
-
-
-
-
-
-  render() {
-    return (
-
-        <Wrapper>
-
-        <Header />
-
-        <Instructions />
-       
-        
-        <Navigation
-        message={this.state.message}
-        curScore={this.state.curScore}
-        topScore={this.state.topScore}
-        />
-
-       
-
-        
-        {
-            this.state.pokemon.map(pokemon => (
-                <PokemonCard
-                    pkmn={pokemon.pkmn}
-                    image={pokemon.image}
-                    selectPokemon={this.selectPokemon} 
-                    curScore={this.state.curScore}
-                />
-            ))
-        }
-
-        
-
-        </Wrapper>
-    );
-  }
+    //Components rendered to the screen.
+    render() {
+        return (
+            <Wrapper>
+            <Header />
+            <Instructions />
+            <Navigation
+            message={this.state.message}
+            curScore={this.state.curScore}
+            topScore={this.state.topScore}
+            />
+            <Wrapper>
+            {
+                this.state.pokemon.map(pokemon => (
+                    <PokemonCard
+                        pkmn={pokemon.pkmn}
+                        image={pokemon.image}
+                        selectPokemon={this.selectPokemon} 
+                        curScore={this.state.curScore}
+                    />
+                ))
+            }
+            </Wrapper>
+            <Footer />
+            </Wrapper>
+        );
+    }
 }
 
+//Export Component for Use in the Rest of Application.
 export default App;

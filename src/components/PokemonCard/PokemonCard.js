@@ -1,6 +1,8 @@
+//Importing React Components
 import React from "react";
 import "./PokemonCard.css";
 
+//Image Cards Div
 const PokemonCard = props => (
     <div className="card">
         <div className="img-container">
@@ -13,4 +15,5 @@ const PokemonCard = props => (
     </div>
 );
 
+//Export Component for Use in the Rest of Application.
 export default PokemonCard;
