@@ -104,7 +104,7 @@ class App extends Component {
             ))
         }
 
-        <Footer />
+        
 
         </Wrapper>
     );
