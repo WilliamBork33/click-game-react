@@ -1,14 +1,14 @@
 import React from "react";
-import "./Navpills.css";
+import "./Navigation.css";
 
-const Navpills = props => (
+const Navigation = props => (
     <div>
         <ul className="nav nav-pills nav-justified">
             <li><a href="/">Restart</a></li>
             <li
-                className={props.message.indexOf('incorrectly') !== -1 ? 
+                className={props.message.indexOf("Already clicked this Pokemon") !== -1 ? 
                     "desc-incorrect" : 
-                    props.message.indexOf('correctly') !== -1 ?
+                    props.message.indexOf("Good! Keep Trying!") !== -1 ?
                         "desc-correct" :
                         "desc-normal"}
             >
@@ -19,4 +19,4 @@ const Navpills = props => (
     </div>
 );
 
-export default Navpills;
+export default Navigation;

@@ -9,8 +9,9 @@ import Wrapper from "./components/Wrapper/";
 import Header from "./components/Header/";
 import Instructions from "./components/Instructions/";
 import PokemonCard from "./components/PokemonCard";
-import Navpills from './components/Navpills'
-import CardContainer from './components/CardContainer/CardContainer';
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer/";
+
 
 
 class App extends Component {
@@ -46,7 +47,7 @@ class App extends Component {
         if(findPokemon === undefined) {
             // failure to select a new dog
             this.setState({ 
-                message: "You guessed incorrectly!",
+                message: "Already clicked this Pokemon!",
                 topScore: (this.state.curScore > this.state.topScore) ? this.state.curScore : this.state.topScore,
                 curScore: 0,
                 pokemon: pokemon,
@@ -58,7 +59,7 @@ class App extends Component {
             const newPokemon = this.state.unselectedPokemon.filter(item => item.pkmn !== pkmn);
             
             this.setState({ 
-                message: "You guessed correctly!",
+                message: "Good! Keep Trying!",
                 curScore: this.state.curScore + 1,
                 pokemon: pokemon,
                 unselectedPokemon: newPokemon
@@ -83,13 +84,13 @@ class App extends Component {
         <Instructions />
        
         
-        <Navpills
+        <Navigation
         message={this.state.message}
         curScore={this.state.curScore}
         topScore={this.state.topScore}
         />
 
-        <CardContainer />
+       
 
         
         {
@@ -102,6 +103,8 @@ class App extends Component {
                 />
             ))
         }
+
+        <Footer />
 
         </Wrapper>
     );
